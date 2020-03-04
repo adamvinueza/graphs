@@ -9,15 +9,15 @@ w = Vertex('w')
 x = Vertex('x')
 y = Vertex('y')
 edges = [
-    [r, s],
-    [r, v],
-    [s, w],
-    [t, w],
-    [t, u],
-    [u, x],
-    [u, y],
-    [w, x],
-    [x, y]
+    (r, s),
+    (r, v),
+    (s, w),
+    (t, w),
+    (t, u),
+    (u, x),
+    (u, y),
+    (w, x),
+    (x, y)
 ]
 src = s
 dest = y
