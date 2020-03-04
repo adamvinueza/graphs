@@ -2,9 +2,9 @@
 import sys
 
 class Vertex:
-'''
-Vertex represents a graph vertex.
-'''
+    '''
+    Vertex represents a graph vertex.
+    '''
     def __init__(self, name):
         self.name = name 
         self.visited = False
@@ -12,10 +12,10 @@ Vertex represents a graph vertex.
         self.cost = sys.maxsize
 
 class Graph:
-'''
-Graph represents an undirected graph with edges of unit cost--meaning the cost
-of traveling from any vertex to an adjacent vertex is constant.
-'''
+    '''
+    Graph represents an undirected graph with edges of unit cost--meaning the cost
+    of traveling from any vertex to an adjacent vertex is constant.
+    '''
     def __init__(self):
         self.vertices = []
         self.edges = {}
