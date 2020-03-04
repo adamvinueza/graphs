@@ -48,10 +48,10 @@ There are three basic operations in the BFS algorithm:
 - updating it if it's unvisited and tossing it into the queue
 
 Two critical things to note are (1) the only vertices that are put into the
-queue after the source vertex have a chance to get in if they're unvisited, and
-(2) that they only get into the queue in a visited state. This means that no
-vertex can ever get into the queue _more than once_. Understanding this is
-central to our understanding of the relationship between BFS and shortest paths.
+queue after the source vertex have to be initially unvisited, and (2) that they
+are put into queue in a visited state. This means that no vertex can ever get
+into the queue _more than once_. Understanding this is central to our
+understanding of the relationship between BFS and shortest paths.
 
 ### Why is the algorithm "breadth-first"?
 
