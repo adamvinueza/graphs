@@ -30,20 +30,28 @@ BFS(g, s):
     s.visited := TRUE
     s.parent := NIL
     s.distance := 0
-    Q := QUEUE
+    Q := QUEUE 
     Q.enqueue(s)
     while Q.size != 0:
         u := Q.dequeue()
         for v in g.adjacents(u):
-            v.visited := TRUE
-            v.distance := u.distance + 1
-            v.parent := u
-            Q.enqueue(v)
-```
+            if v.visited = FALSE:
+                v.visited := TRUE
+                v.distance := u.distance + 1
+                v.parent := u
+                Q.enqueue(v)
+    ```
 
-Running BFS on a graph creates a shortest-path tree whose root is the source
-vertex. You can then find the shortest path from source to a given vertex by
-following that vertex's parents back to the source.
+There are three basic operations in the BFS algorithm:
+- dequeuing a vertex
+- retrieving its adjacent vertices 
+- updating it if it's unvisited and tossing it into the queue
+
+Two critical things to note are (1) the only vertices that are put into the
+queue after the start index have a chance to get in if they're unvisited, and
+(2) that they only get into the queue in a visited state. This means that no
+vertex can ever get into the queue _more than once_. Understanding this is
+central to our understanding of the relationship between BFS and shortest paths.
 
 ### Why is the algorithm "breadth-first"?
 
