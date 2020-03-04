@@ -4,10 +4,10 @@ Implementations of graph data structures, for teaching purposes.
 ## The breadth-first search algorithm and shortest paths
 
 One of the standard uses of graphs is to discover the shortest path from one
-place to another, where all distances between adjacent vertices is the same.
+place to another, where all distances between adjacent vertices are the same.
 Traversing grids is one of the typical examples.
 
-When distances between adjacent vertices is always the same, you can use an
+When distances between adjacent vertices are always the same, you can use an
 algorithm known as _breadth-first search_ to find the shortest paths from a
 source vertex to any other vertex in graph. (When distances are _not_ always the
 same, you will need to use a different algorith.)
