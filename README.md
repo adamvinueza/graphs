@@ -24,9 +24,9 @@ Here is the algorithm, in pseudocode:
 ```
 BFS(g, s):
     for v in g.vertices:
-        v.visited = FALSE
-        v.parent = NIL
-        v.distance = MAX_DISTANCE
+        v.visited := FALSE
+        v.parent := NIL
+        v.distance := MAX_DISTANCE
     s.visited := TRUE
     s.parent := NIL
     s.distance := 0
@@ -35,9 +35,9 @@ BFS(g, s):
     while Q.size != 0:
         u := Q.dequeue()
         for v in g.adjacents(u):
-            v.visited = TRUE
-            v.distance = u.distance + 1
-            v.parent = u
+            v.visited := TRUE
+            v.distance := u.distance + 1
+            v.parent := u
             Q.enqueue(v)
 ```
 
