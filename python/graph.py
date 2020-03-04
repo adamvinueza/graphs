@@ -14,8 +14,8 @@ class Vertex:
 
 class Graph:
     '''
-    Graph represents an undirected graph with edges of unit cost--meaning the cost
-    of traveling from any vertex to an adjacent vertex is constant.
+    Graph represents an undirected graph with edges of unit cost--meaning the
+    cost of traveling from any vertex to an adjacent vertex is constant.
     '''
     def __init__(self, edges):
         self.vertices = []
@@ -26,8 +26,11 @@ class Graph:
     def adjacents(self, v):
         return self.edges[v]
 
-    # "undirected" means bidirectional, so we add both vertices as keys
     def add_edge(self, e):
+        '''
+        Adds the specified edge to this Graph, if not already in this Graph.
+        Because the edge is undirected, two edges are added.
+        '''
         first = e[0]
         second = e[1]
         if first not in self.edges:
@@ -38,14 +41,21 @@ class Graph:
             self.edges[second] = []
         if first not in self.edges[second]:
             self.edges[second].append(first)
-        self.add_vertices([first, second])
+        self._add_vertices([first, second])
 
-    def add_vertices(self, e):
+    def _add_vertices(self, e):
+        '''
+        Adds the specified vertex to this Graph, if not already in this Graph.
+        '''
         for v in e:
             if not v in self.vertices:
                 self.vertices.append(v)
 
-    def path(self, dest):
+    def shortest_path(self, src, dest):
+        '''
+        Returns the shortest path from src to dest.
+        '''
+        self.bfs(src)
         curr = dest 
         vals = []
         while curr.parent is not None:
@@ -55,7 +65,8 @@ class Graph:
         vals.reverse()
         return ''.join(vals)
 
-    def cost(self, src, dest):
+    def min_cost(self, src, dest):
+        self.bfs(src)
         if src not in self.vertices or dest not in self.vertices:
             return MAX_VERTEX_COST
         curr_cost = dest.cost
@@ -74,6 +85,7 @@ class Graph:
             v.cost = sys.maxsize
 
     def bfs(self, s):
+        self.reset()
         s.visited = True
         s.cost = 0
         s.parent = None
