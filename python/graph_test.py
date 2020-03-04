@@ -5,7 +5,7 @@ import test1
 def test_graph_ctr():
     g = Graph([])
     assert 0 == len(g.vertices)
-    assert 0 == len(g.edges)
+    assert 0 == len(g.adjacency_map)
     h = Graph(test1.edges)
     assert 8 == len(h.vertices)
 

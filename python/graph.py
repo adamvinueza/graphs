@@ -16,15 +16,19 @@ class Graph:
     '''
     Graph represents an undirected graph with edges of unit cost--meaning the
     cost of traveling from any vertex to an adjacent vertex is constant.
+
+    An edge can be understood as a pair of vertices. Edges are represented in
+    a Graph using a dictionary mapping Vertices to lists of Vertices. This is a
+    fairly straightforward implementation of what's known as an adjacency list.
     '''
     def __init__(self, edges):
         self.vertices = []
-        self.edges = {}
+        self.adjacency_map = {}
         for e in edges:
             self.add_edge(e)
 
     def adjacents(self, v):
-        return self.edges[v]
+        return self.adjacency_map[v]
 
     def add_edge(self, e):
         '''
@@ -33,14 +37,14 @@ class Graph:
         '''
         first = e[0]
         second = e[1]
-        if first not in self.edges:
-            self.edges[first] = []
-        if second not in self.edges[first]:
-            self.edges[first].append(second)
-        if second not in self.edges:
-            self.edges[second] = []
-        if first not in self.edges[second]:
-            self.edges[second].append(first)
+        if first not in self.adjacency_map:
+            self.adjacency_map[first] = []
+        if second not in self.adjacency_map[first]:
+            self.adjacency_map[first].append(second)
+        if second not in self.adjacency_map:
+            self.adjacency_map[second] = []
+        if first not in self.adjacency_map[second]:
+            self.adjacency_map[second].append(first)
         self._add_vertices([first, second])
 
     def _add_vertices(self, e):
