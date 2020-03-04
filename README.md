@@ -40,7 +40,7 @@ BFS(g, s):
                 v.distance := u.distance + 1
                 v.parent := u
                 Q.enqueue(v)
-    ```
+```
 
 There are three basic operations in the BFS algorithm:
 - dequeuing a vertex
