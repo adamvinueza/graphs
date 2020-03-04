@@ -16,10 +16,9 @@ The algorithm works by giving vertices three properties: _visited_, _parent_ and
 _distance_ (sometimes also referred to as a _cost_). The visited property is set
 to keep track of which vertices have already been touched by the algorithm. The
 parent property is set during the algorithm so that one can retrieve the
-shortest path from source to destination by running the algorithm and following
-the destination's parents to the source. The distance property is set so that
-retrieving the minimum distance from source to destination is a simple matter of
-subtraction.
+shortest path from source to destination by following the destination's parents
+to the source. The distance property is set so that retrieving the minimum
+distance from source to destination is a simple matter of subtraction.
 
 Here is the algorithm, in pseudocode:
 ```
