@@ -26,7 +26,7 @@ BFS(g, s):
     for v in g.vertices:
         v.visited := FALSE
         v.parent := NIL
-        v.distance := MAX_DISTANCE
+        v.distance := INFINITY
     s.visited := TRUE
     s.parent := NIL
     s.distance := 0
@@ -50,8 +50,9 @@ There are three basic operations in the BFS algorithm:
 Two critical things to note are (1) the only vertices that are put into the
 queue after the source vertex have to be initially unvisited, and (2) that they
 are put into queue in a visited state. This means that no vertex can ever get
-into the queue _more than once_. Understanding this is central to our
-understanding of the relationship between BFS and shortest paths.
+into the queue _more than once_, which implies that its distance property is set
+to something other than INFINITY or 0 at most once. Understanding this is
+central to our understanding of the relationship between BFS and shortest paths.
 
 ### Why is the algorithm "breadth-first"?
 
