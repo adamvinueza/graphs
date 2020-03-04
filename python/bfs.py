@@ -2,6 +2,9 @@
 import sys
 
 class Vertex:
+'''
+Vertex represents a graph vertex.
+'''
     def __init__(self, name):
         self.name = name 
         self.visited = False
@@ -9,6 +12,10 @@ class Vertex:
         self.cost = sys.maxsize
 
 class Graph:
+'''
+Graph represents an undirected graph with edges of unit cost--meaning the cost
+of traveling from any vertex to an adjacent vertex is constant.
+'''
     def __init__(self):
         self.vertices = []
         self.edges = {}
@@ -16,14 +23,15 @@ class Graph:
     def adjacents(self, v):
         return self.edges[v]
 
+    # "undirected" means bidirectional, so we add both vertices as keys
     def add_edge(self, e):
         first = e[0]
         second = e[1]
         if first not in self.edges:
             self.edges[first] = []
+        self.edges[first].append(second)
         if second not in self.edges:
             self.edges[second] = []
-        self.edges[first].append(second)
         self.edges[second].append(first)
         self.add_vertices([first, second])
 
