@@ -75,8 +75,6 @@ with a 0 distance. Once it is visited, its distance is updated to 1 plus the
 distance of the visiting vertex; but _this happens precisely once_. So it should
 be intuitive that if we start from the source vertex (distance = 0), then all
 and only its adjacent vertices will have a distance of 1, and all and only
-_their unvisited adjacent vertices_ will have a distance of 2, and so on. That
-is, if there were a shorter path from the source to a vertex, _it would have
-already been visited_; but given how we're traversing the graph, this is
-impossible. So once BFS computes a path from a source to a vertex, that path is
-_provably_ shortest.
+_their unvisited adjacent vertices_ will have a distance of 2, and so on. So the
+only way we could have a non-shortest-path is if BFS somehow forgot to mark a
+vertex as visited, or incorrectly updated the distance.
