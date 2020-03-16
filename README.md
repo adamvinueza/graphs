@@ -1,5 +1,6 @@
-# graphs
-Implementations of graph data structures, for teaching purposes.
+# Explaining Data Structures: Shortest Paths in Graphs
+
+A treatment of BFS and shortest-path algorithms.
 
 ## The breadth-first search algorithm and shortest paths
 
