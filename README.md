@@ -11,7 +11,7 @@ Traversing grids is one of the typical examples.
 When distances between adjacent vertices are always the same, you can use an
 algorithm known as _breadth-first search_ to find the shortest paths from a
 source vertex to any other vertex in graph. (When distances are _not_ always the
-same, you will need to use a different algorith.)
+same, you will need to use a different algorithm.)
 
 The algorithm works by giving vertices three properties: _visited_, _parent_ and
 _distance_ (sometimes also referred to as a _cost_). The visited property is set
